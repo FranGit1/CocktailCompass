@@ -5,6 +5,7 @@ import Layout from "./components/Layout";
 import Home from "./components/Home";
 import MenuContextProvider from "./context/MenuContextProvider";
 import { OfferContextProvider } from "./context/OfferContextProvider";
+import IngredientList from "./components/IngredientList";
 
 function App() {
   return (
@@ -15,6 +16,7 @@ function App() {
           <Routes>
             <Route path="/" element={<Layout />}>
               <Route path="/" element={<Home />} />
+              <Route path="ingredients" element={<IngredientList />} />
             </Route>
           </Routes>
         </MenuContextProvider>

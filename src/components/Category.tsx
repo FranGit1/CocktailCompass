@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import DrinkCategory from "../model/DrinkCategory";
 interface CategoryProps {
   category: DrinkCategory;
