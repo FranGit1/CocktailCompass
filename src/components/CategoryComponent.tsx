@@ -10,7 +10,7 @@ export const CategoryComponent: React.FC<CategoryProps> = ({ category }) => {
       <img
         src={category.image}
         alt=""
-        className="rounded-t-xl h-70 w-96 object-cover "
+        className="rounded-t-xl h-80 w-96 object-contain "
       />
       <div className="font-bold text-center pb-4">{category.strCategory}</div>
     </div>

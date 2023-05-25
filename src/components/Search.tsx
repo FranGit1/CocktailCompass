@@ -13,7 +13,7 @@ export const Search: React.FC<SearchProps> = () => {
     e.preventDefault();
     const query = inputRef.current?.value;
     navigate(`/search/${query}`);
-    // e.currentTarget.reset();
+    e.currentTarget.reset();
     setMenuOn(true);
   };
 
@@ -30,7 +30,7 @@ export const Search: React.FC<SearchProps> = () => {
           type="search"
           id="query"
           name="q"
-          placeholder="Search cocktails"
+          placeholder="Search cocktails by name"
           aria-label="Search through site content"
           ref={inputRef}
           className="w-full text-black px-4 py-2 focus:outline-none"

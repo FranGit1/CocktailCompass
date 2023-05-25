@@ -9,6 +9,7 @@ import IngredientList from "./components/IngredientList";
 import CategoryList from "./components/CategoryList";
 import DrinkDetails from "./components/DrinkDetails";
 import DrinksByCategory from "./components/DrinksByCategory";
+import SearchCocktail from "./components/SearchCocktail";
 
 function App() {
   return (
@@ -26,6 +27,7 @@ function App() {
                 path="drinksByCategory/:category"
                 element={<DrinksByCategory />}
               />
+              <Route path="search/:keyword" element={<SearchCocktail />} />
             </Route>
           </Routes>
         </MenuContextProvider>

@@ -15,10 +15,10 @@ export const Offer: React.FC = () => {
   return (
     <div className="offer-container bg-gradient-to-r bg-darkRed text-white font-inter flex justify-between items-center px-28 py-2">
       <div className="text-container flex justify-start items-center flex-grow">
-        <h3 className="font-bold text-lg mr-8">Make MyNews your homepage</h3>
-        <p className="text-sm">
-          Every day discover what's trending on the internet!
-        </p>
+        <h3 className="font-bold text-lg mr-8">
+          Recieve newsletter from Cocktail Compass
+        </h3>
+        <p className="text-sm">Get new cocktail ideas every day!</p>
       </div>
       <div className="button-container flex justify-end items-center flex-grow-0">
         <button

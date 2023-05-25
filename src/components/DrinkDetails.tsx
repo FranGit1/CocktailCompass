@@ -23,11 +23,15 @@ export const DrinkDetails: React.FC<DrinkDetailsProps> = ({}) => {
         />
         <div className="grid grid-cols-1 sm:grid-cols-3 text-lg py-2">
           <div>
-            <strong className="font-bold">Category:</strong>{" "}
+            <strong className="md:font-bold text-sm  font-semibold">
+              Category:
+            </strong>{" "}
             {drink?.strCategory}
           </div>
-          <div>
-            <strong className="font-bold">Alcoholic:</strong>
+          <div className="md:ml-0 ml-4">
+            <strong className="md:font-bold text-sm font-semibold ">
+              Alcoholic:
+            </strong>
             {drink?.strAlcoholic === "Alcoholic" ? (
               <CheckIcon />
             ) : (
@@ -35,7 +39,10 @@ export const DrinkDetails: React.FC<DrinkDetailsProps> = ({}) => {
             )}
           </div>
           <div>
-            <strong className="font-bold">Glass Type:</strong> {drink?.strGlass}
+            <strong className="md:font-bold text-sm  font-semibold">
+              Glass Type:
+            </strong>{" "}
+            {drink?.strGlass}
           </div>
         </div>
       </div>
@@ -47,7 +54,9 @@ export const DrinkDetails: React.FC<DrinkDetailsProps> = ({}) => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 pt-8">
           <div>
-            <h2 className="text-2xl font-semibold mb-2">Ingredients</h2>
+            <h2 className="md:text-2xl text-lg font-semibold mb-2">
+              Ingredients
+            </h2>
             <ul>
               {Array.from({ length: 20 }).map((_, ind) => {
                 const ingredient =
@@ -61,7 +70,9 @@ export const DrinkDetails: React.FC<DrinkDetailsProps> = ({}) => {
             </ul>
           </div>
           <div>
-            <h2 className="text-2xl font-semibold mb-2">Measures</h2>
+            <h2 className="md:text-2xl text-lg  font-semibold mb-2">
+              Measures
+            </h2>
 
             <ul>
               {Array.from({ length: 20 }).map((_, ind) => {
