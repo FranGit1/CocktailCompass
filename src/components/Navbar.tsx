@@ -3,6 +3,7 @@ import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
 import LiquorOutlinedIcon from "@mui/icons-material/LiquorOutlined";
 import LocalBarOutlinedIcon from "@mui/icons-material/LocalBarOutlined";
 import BookmarksOutlinedIcon from "@mui/icons-material/BookmarksOutlined";
+import LocalDrinkOutlinedIcon from "@mui/icons-material/LocalDrinkOutlined";
 import { Link, useLocation } from "react-router-dom";
 import { MenuContext } from "../context/MenuContextProvider";
 
@@ -31,13 +32,6 @@ export const Navbar: React.FC<NavbarProps> = ({ direction }) => {
         className={`flex flex-col items-center  px-3 py-2  rounded-md text-grey ${
           pathname === "/" ? "bg-white shadow-lg md:shadow-none" : ""
         } hover:bg-white group min-w-fit md:w-24
-        
-        
-        
-        
-        
-        
-        
         `}
         onClick={handleIconClick}
       >
@@ -54,6 +48,33 @@ export const Navbar: React.FC<NavbarProps> = ({ direction }) => {
           } group-hover:text-darkRed`}
         >
           Home
+        </span>
+      </Link>
+
+      <Link
+        to="/categories"
+        className={`flex flex-col items-center  px-3 py-2  rounded-md text-grey ${
+          pathname === "/categories" ? "bg-white shadow-lg md:shadow-none" : ""
+        } hover:bg-white group min-w-fit md:w-24
+        `}
+        onClick={handleIconClick}
+      >
+        <div className="">
+          {pathname === "/categories" ? (
+            <LocalDrinkOutlinedIcon
+              sx={{ color: "#3A1078" }}
+              fontSize="large"
+            />
+          ) : (
+            <LocalDrinkOutlinedIcon fontSize="large" />
+          )}
+        </div>
+        <span
+          className={`mt-2 text-sm font-semibold  ${
+            pathname === "/categories" ? "text-darkRed " : ""
+          } group-hover:text-darkRed`}
+        >
+          Categories
         </span>
       </Link>
       <Link
