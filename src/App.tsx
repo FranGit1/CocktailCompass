@@ -8,6 +8,7 @@ import { OfferContextProvider } from "./context/OfferContextProvider";
 import IngredientList from "./components/IngredientList";
 import CategoryList from "./components/CategoryList";
 import DrinkDetails from "./components/DrinkDetails";
+import DrinksByCategory from "./components/DrinksByCategory";
 
 function App() {
   return (
@@ -21,6 +22,10 @@ function App() {
               <Route path="ingredients" element={<IngredientList />} />
               <Route path="categories" element={<CategoryList />} />
               <Route path="drink/:id" element={<DrinkDetails />} />
+              <Route
+                path="drinksByCategory/:category"
+                element={<DrinksByCategory />}
+              />
             </Route>
           </Routes>
         </MenuContextProvider>

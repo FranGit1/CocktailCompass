@@ -4,7 +4,7 @@ interface CategoryProps {
   category: DrinkCategory;
 }
 
-export const Category: React.FC<CategoryProps> = ({ category }) => {
+export const CategoryComponent: React.FC<CategoryProps> = ({ category }) => {
   return (
     <div className="bg-white shadow rounded-md max-w-fit relative flex flex-col place-content-between">
       <img
@@ -17,4 +17,4 @@ export const Category: React.FC<CategoryProps> = ({ category }) => {
   );
 };
 
-export default Category;
+export default CategoryComponent;

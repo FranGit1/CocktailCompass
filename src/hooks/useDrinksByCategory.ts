@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import Drink from "../model/Drink";
 
-function useDrinksByCategory(category: string): Drink[] {
+function useDrinksByCategory(category: string | undefined): Drink[] {
   const [drinks, setDrinks] = useState<Drink[]>([]);
 
   useEffect(() => {
