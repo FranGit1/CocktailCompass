@@ -1,0 +1,43 @@
+import React, { useEffect, useState } from "react";
+import Drink from "../model/Drink";
+import DrinkComponent from "./DrinkComponent";
+
+export const Favourite: React.FC = () => {
+  const [savedDrinks, setSavedDrinks] = useState<Drink[]>([]);
+
+  useEffect(() => {
+    const savedDrinksJson = localStorage.getItem("savedDrinks");
+    if (savedDrinksJson) {
+      const savedDrinksArray: Drink[] = JSON.parse(savedDrinksJson);
+      setSavedDrinks(savedDrinksArray);
+    }
+  }, []);
+
+  const handleRemove = (drink: Drink): void => {
+    const filteredArticles = savedDrinks.filter(
+      (savedDrink: Drink) => savedDrink.strDrink !== drink.strDrink
+    );
+    setSavedDrinks(filteredArticles);
+    localStorage.setItem("savedDrinks", JSON.stringify(filteredArticles));
+  };
+
+  return (
+    <>
+      <h1 className="text-lg font-semibold mt-5 mb-5">Favourite Drinks</h1>
+      {savedDrinks.length > 0 ? (
+        <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {savedDrinks.map((drink: Drink) => (
+            <DrinkComponent
+              key={drink.strDrink}
+              drink={drink}
+              handleRemove={() => handleRemove(drink)}
+            />
+          ))}
+        </div>
+      ) : (
+        <p>You have no saved drinks.</p>
+      )}
+    </>
+  );
+};
+export default Favourite;

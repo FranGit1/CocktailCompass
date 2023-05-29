@@ -21,13 +21,7 @@ export const DrinkList: React.FC<DrinkListProps> = ({ category, drinks }) => {
       </h1>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-2">
         {drinks?.map((drink) => (
-          <Link
-            key={drink.idDrink}
-            to={`/drink/${drink.idDrink}`}
-            className="cursor-pointer"
-          >
-            <DrinkComponent key={drink.strDrink} drink={drink} />
-          </Link>
+          <DrinkComponent key={drink.strDrink} drink={drink} />
         ))}
       </div>
     </div>

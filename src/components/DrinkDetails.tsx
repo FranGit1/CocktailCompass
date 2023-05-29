@@ -24,9 +24,9 @@ export const DrinkDetails: React.FC<DrinkDetailsProps> = ({}) => {
       <div>
         <img
           src={drink?.strDrinkThumb}
-          className="h-auto max-w-full rounded-lg md:h-80 md:w-96 md:object-contain"
+          className="h-auto max-w-full md:h-80 md:w-90 md:object-contain "
         />
-        <div className="flex md:flex-col flex-row mt-4">
+        <div className="flex md:flex-col flex-row mt-4 ">
           <div>
             <strong className="md:font-bold text-sm  font-semibold">
               Category:

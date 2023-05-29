@@ -1,4 +1,5 @@
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
 import { Routes, Route } from "react-router-dom";
 import Layout from "./components/Layout";
@@ -10,6 +11,7 @@ import CategoryList from "./components/CategoryList";
 import DrinkDetails from "./components/DrinkDetails";
 import DrinksByCategory from "./components/DrinksByCategory";
 import SearchCocktail from "./components/SearchCocktail";
+import Favourite from "./components/Favourite";
 
 function App() {
   return (
@@ -23,6 +25,7 @@ function App() {
               <Route path="ingredients" element={<IngredientList />} />
               <Route path="categories" element={<CategoryList />} />
               <Route path="drink/:id" element={<DrinkDetails />} />
+              <Route path="favourite" element={<Favourite />} />
               <Route
                 path="drinksByCategory/:category"
                 element={<DrinksByCategory />}
