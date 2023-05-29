@@ -15,20 +15,25 @@ export const DrinkDetails: React.FC<DrinkDetailsProps> = ({}) => {
   }, [drink]);
 
   return (
-    <div className=" mx-auto p-8 flex">
+    <div className=" mx-auto p-8 flex flex-col md:flex-row">
+      <div className="block md:hidden">
+        <h1 className="text-4xl font-bold mb-8 text-left text-darkRed">
+          {drink?.strDrink}
+        </h1>
+      </div>
       <div>
         <img
           src={drink?.strDrinkThumb}
-          className="h-auto max-w-full rounded-lg"
+          className="h-auto max-w-full rounded-lg md:h-80 md:w-96 md:object-contain"
         />
-        <div className="grid grid-cols-1 sm:grid-cols-3 text-lg py-2">
+        <div className="flex md:flex-col flex-row mt-4">
           <div>
             <strong className="md:font-bold text-sm  font-semibold">
               Category:
             </strong>{" "}
             {drink?.strCategory}
           </div>
-          <div className="md:ml-0 ml-4">
+          <div className="">
             <strong className="md:font-bold text-sm font-semibold ">
               Alcoholic:
             </strong>
@@ -38,7 +43,7 @@ export const DrinkDetails: React.FC<DrinkDetailsProps> = ({}) => {
               <CloseIcon />
             )}
           </div>
-          <div>
+          <div className="md:ml-0 ml-0">
             <strong className="md:font-bold text-sm  font-semibold">
               Glass Type:
             </strong>{" "}
@@ -46,13 +51,13 @@ export const DrinkDetails: React.FC<DrinkDetailsProps> = ({}) => {
           </div>
         </div>
       </div>
-      <div className=" ml-12">
-        <h1 className="text-4xl font-bold mb-8 text-left text-darkRed">
+      <div className="md:ml-12 md:mt-0 ml-0 mt-6">
+        <h1 className="text-4xl font-bold mb-8 text-left text-darkRed hidden md:block">
           {drink?.strDrink}
         </h1>
         <div className="my-3">{drink?.strInstructions}</div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 pt-8">
+        <div className="flex md:gap-16 justify-between md:justify-normal	 pt-8">
           <div>
             <h2 className="md:text-2xl text-lg font-semibold mb-2">
               Ingredients

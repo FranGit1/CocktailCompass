@@ -45,7 +45,7 @@ export const Layout: React.FC<LayoutProps> = ({}) => {
                 : "justify-between items-center "
             } w-full md:w-fit`}
           >
-            <div className="flex items-center">
+            <div className="flex items-center pb-6 md:pb-0">
               <img src={logo} className="pr-2" />
               <div>
                 <h1 className="text-darkRed pr-10 font-extrabold	 text-3xl   md:mr-5  ">
@@ -78,7 +78,7 @@ export const Layout: React.FC<LayoutProps> = ({}) => {
           <div
             className={` ${
               !menuOff ? "mt-10 w-full md:w-auto" : "w-full md:w-auto"
-            } md:grow md:mr-44 `}
+            } md:grow md:mr-44 pb-4 md:pb-0 `}
           >
             <Search />
           </div>
@@ -90,25 +90,17 @@ export const Layout: React.FC<LayoutProps> = ({}) => {
               <Navbar direction={true} />
             </div>
             <div className="flex-col text-myBlack">
-              {pathname !== "/favourite" && pathname !== "/latest" && (
+              {pathname == "/" && (
                 <div className="flex justify-center py-4 font-semibold  md:hidden	">
                   <div
                     onClick={handleClickFeature}
-                    className={` py-3 px-5 cursor-pointer  ${
+                    className={` py-3 px-5 cursor-pointer pb-6 md:pb-0 ${
                       featured || !showLatest
                         ? "bg-redTrans rounded-3xl text-darkRed"
                         : ""
                     }`}
                   >
                     Featured
-                  </div>
-                  <div
-                    onClick={handleClickLatest}
-                    className={` py-3 px-5 cursor-pointer  ${
-                      showLatest ? "bg-redTrans rounded-3xl text-darkRed" : ""
-                    }`}
-                  >
-                    Latest
                   </div>
                 </div>
               )}
