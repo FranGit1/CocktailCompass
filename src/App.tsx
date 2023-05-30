@@ -14,6 +14,7 @@ import SearchCocktail from "./components/SearchCocktail";
 import Favourite from "./components/Favourite";
 import RandomCocktail from "./components/RandomCocktail";
 import DrinkByIngredient from "./components/DrinkByIngredient";
+import About from "./components/About";
 
 function App() {
   return (
@@ -27,6 +28,7 @@ function App() {
               <Route path="ingredients" element={<IngredientList />} />
               <Route path="categories" element={<CategoryList />} />
               <Route path="drink/:id" element={<DrinkDetails />} />
+              <Route path="about" element={<About />} />
               <Route
                 path="drinkByIngredient/:ingredient"
                 element={<DrinkByIngredient />}

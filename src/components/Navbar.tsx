@@ -6,6 +6,7 @@ import BookmarksOutlinedIcon from "@mui/icons-material/BookmarksOutlined";
 import LocalDrinkOutlinedIcon from "@mui/icons-material/LocalDrinkOutlined";
 import { Link, useLocation } from "react-router-dom";
 import { MenuContext } from "../context/MenuContextProvider";
+import InfoOutlinedIcon from "@mui/icons-material/InfoOutlined";
 
 interface NavbarProps {
   direction: boolean;
@@ -145,6 +146,29 @@ export const Navbar: React.FC<NavbarProps> = ({ direction }) => {
           } group-hover:text-darkRed`}
         >
           Favourite
+        </span>
+      </Link>
+
+      <Link
+        to="/about"
+        className={`flex flex-col items-center  px-3 py-2 rounded-md text-grey ${
+          pathname === "/about" ? "bg-white  shadow-lg md:shadow-none" : ""
+        } hover:bg-white group   min-w-fit md:w-24`}
+        onClick={handleIconClick}
+      >
+        <div className="">
+          {pathname === "/about" ? (
+            <InfoOutlinedIcon sx={{ color: "#3A1078" }} fontSize="large" />
+          ) : (
+            <InfoOutlinedIcon fontSize="large" />
+          )}
+        </div>
+        <span
+          className={`mt-2 text-sm font-semibold  ${
+            pathname === "/about" ? "text-darkRed" : ""
+          } group-hover:text-darkRed`}
+        >
+          About
         </span>
       </Link>
     </div>

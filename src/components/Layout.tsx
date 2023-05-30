@@ -24,11 +24,6 @@ export const Layout: React.FC<LayoutProps> = ({}) => {
     setShowLatest(false);
   };
 
-  const handleClickLatest = (): void => {
-    setShowLatest(true);
-    setFeatured(false);
-  };
-
   const handleClickMenu = (): void => {
     setMenuOn(!menuOff);
   };

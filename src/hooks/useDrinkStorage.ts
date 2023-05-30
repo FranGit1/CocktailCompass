@@ -2,11 +2,6 @@ import { useState } from "react";
 import { toast } from "react-toastify";
 import Drink from "../model/Drink";
 
-interface DrinkProps {
-  drink: Drink;
-  handleRemove?: Function;
-}
-
 const useDrinkStorage = (drink: Drink) => {
   const [isSaved, setIsSaved] = useState(false);
 
