@@ -46,8 +46,11 @@ export const Layout: React.FC<LayoutProps> = ({}) => {
                 <h1 className="text-darkRed pr-10 font-extrabold	 text-3xl   md:mr-5  ">
                   Cocktail
                 </h1>
-                <h1 className="  pr-10 font-extrabold pl-6 text-3xl   md:mr-5 mb-4 md:mb-0">
-                  Compass
+
+                <h1 className="mb-4 text-3xl pr-10 pl-6 md:mr-5 mb-4 md:mb-0  font-extrabold text-gray-900 dark:text-white md:text-3xl lg:text-3xl">
+                  <span className="text-transparent bg-clip-text bg-gradient-to-r to-myBlack from-darkRed">
+                    Compass
+                  </span>
                 </h1>
               </div>
             </div>

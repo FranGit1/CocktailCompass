@@ -12,7 +12,11 @@ export const CategoryComponent: React.FC<CategoryProps> = ({ category }) => {
         alt=""
         className="rounded-t-xl h-80 w-96 object-contain "
       />
-      <div className="font-bold text-center pb-4">{category.strCategory}</div>
+      <h1 className="mb-4 text-2xl text-center   font-extrabold text-gray-900 dark:text-white md:text-2xl lg:text-2xl">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r to-myBlack from-darkRed">
+          {category.strCategory}
+        </span>
+      </h1>
     </div>
   );
 };

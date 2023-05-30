@@ -27,8 +27,10 @@ export const DrinkDetails: React.FC<DrinkDetailsProps> = ({ drinkP }) => {
   return (
     <div className=" mx-auto p-8 flex flex-col md:flex-row">
       <div className="block md:hidden">
-        <h1 className="text-4xl font-bold mb-8 text-left text-darkRed">
-          {drink?.strDrink}
+        <h1 className="mb-4 text-3xl   font-extrabold text-gray-900 dark:text-white md:text-3xl lg:text-3xl">
+          <span className="text-transparent bg-clip-text bg-gradient-to-r to-myBlack from-darkRed">
+            {drink?.strDrink}
+          </span>
         </h1>
       </div>
       <div>

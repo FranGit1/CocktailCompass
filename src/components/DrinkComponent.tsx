@@ -41,9 +41,11 @@ export const DrinkComponent: React.FC<DrinkProps> = ({
         />
       </Link>
       <div className="flex justify-between items-center">
-        <div className="font-bold text-center pb-4 pt-4 pl-2">
-          {drink.strDrink}
-        </div>
+        <h1 className="mb-4 text-xl font-extrabold text-gray-900 dark:text-white md:text-xl lg:text-xl line-clamp-1  ">
+          <span className="text-transparent  bg-clip-text bg-gradient-to-r to-myBlack from-darkRed">
+            {drink?.strDrink}
+          </span>
+        </h1>
 
         {isFavoritesPage ? (
           <button onClick={handleRemoveClick}>

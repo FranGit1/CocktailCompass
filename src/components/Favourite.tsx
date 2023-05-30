@@ -23,7 +23,11 @@ export const Favourite: React.FC = () => {
 
   return (
     <>
-      <h1 className="text-lg font-semibold mt-5 mb-5">Favourite Drinks</h1>
+      <h1 className="mb-4 text-2xl font-extrabold text-gray-900 dark:text-white md:text-3xl lg:text-4xl">
+        <span className="text-transparent bg-clip-text bg-gradient-to-r to-myBlack from-darkRed">
+          Favourite
+        </span>
+      </h1>{" "}
       {savedDrinks.length > 0 ? (
         <div className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
           {savedDrinks.map((drink: Drink) => (
