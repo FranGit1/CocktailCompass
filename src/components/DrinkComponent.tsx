@@ -1,9 +1,11 @@
-import React, { useState } from "react";
+import React from "react";
 import Drink from "../model/Drink";
 import { toast } from "react-toastify";
 import CloseRoundedIcon from "@mui/icons-material/CloseRounded";
 import FavoriteBorderRoundedIcon from "@mui/icons-material/FavoriteBorderRounded";
 import { Link, useLocation } from "react-router-dom";
+import FavoriteRoundedIcon from "@mui/icons-material/FavoriteRounded";
+import useDrinkStorage from "../hooks/useDrinkStorage";
 
 interface DrinkProps {
   drink: Drink;
@@ -16,15 +18,7 @@ export const DrinkComponent: React.FC<DrinkProps> = ({
 }) => {
   const { pathname } = useLocation();
   const isFavoritesPage: boolean = pathname === "/favourite";
-  const [isSaved, setIsSaved] = useState(false);
-
-  const handleSave = (): void => {
-    let savedDrinks = JSON.parse(localStorage.getItem("savedDrinks") || "[]");
-    savedDrinks.push(drink);
-    localStorage.setItem("savedDrinks", JSON.stringify(savedDrinks));
-    setIsSaved(true);
-    toast.success("Drink saved as favorite!", { autoClose: 2000 });
-  };
+  const { isSaved, handleSave } = useDrinkStorage(drink);
 
   const handleRemoveClick = (): void => {
     if (handleRemove) {
@@ -57,11 +51,12 @@ export const DrinkComponent: React.FC<DrinkProps> = ({
           </button>
         ) : (
           <button onClick={handleSave}>
-            <FavoriteBorderRoundedIcon />
+            {isSaved ? <FavoriteRoundedIcon /> : <FavoriteBorderRoundedIcon />}
           </button>
         )}
       </div>
     </div>
   );
 };
+
 export default DrinkComponent;

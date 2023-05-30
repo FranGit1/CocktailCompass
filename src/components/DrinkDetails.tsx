@@ -1,14 +1,24 @@
 import React, { useEffect } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import { useParams } from "react-router-dom";
 import useDrinkDetails from "../hooks/useDrinkDetails";
 import Drink from "../model/Drink";
 import CheckIcon from "@mui/icons-material/Check";
 import CloseIcon from "@mui/icons-material/Close";
-interface DrinkDetailsProps {}
 
-export const DrinkDetails: React.FC<DrinkDetailsProps> = ({}) => {
+interface DrinkDetailsProps {
+  drinkP?: Drink | null;
+}
+export const DrinkDetails: React.FC<DrinkDetailsProps> = ({ drinkP }) => {
   const { id } = useParams();
-  const drink: Drink | null = useDrinkDetails(id);
+
+  let drink: Drink | null = null;
+
+  if (drinkP == null) {
+    drink = useDrinkDetails(id);
+    console.log(drink);
+  } else {
+    drink = drinkP;
+  }
 
   useEffect(() => {
     console.log(drink);
@@ -26,7 +36,7 @@ export const DrinkDetails: React.FC<DrinkDetailsProps> = ({}) => {
           src={drink?.strDrinkThumb}
           className="h-auto max-w-full md:h-80 md:w-90 md:object-contain "
         />
-        <div className="flex md:flex-col flex-row mt-4 ">
+        <div className="flex justify-between md:flex-col flex-row mt-4 ">
           <div>
             <strong className="md:font-bold text-sm  font-semibold">
               Category:

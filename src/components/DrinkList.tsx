@@ -2,7 +2,6 @@ import React from "react";
 import useDrinksByCategory from "../hooks/useDrinksByCategory";
 import Drink from "../model/Drink";
 import { DrinkComponent } from "./DrinkComponent";
-import { Link } from "react-router-dom";
 
 interface DrinkListProps {
   category: string | undefined;
